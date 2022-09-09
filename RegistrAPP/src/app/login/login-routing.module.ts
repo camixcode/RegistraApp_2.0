@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePage } from '../home/home.page';
+import { PerfilPage } from '../perfil/perfil.page';
+import { RContraseniaPage } from '../rcontrasenia/rcontrasenia.page';
 
 import { LoginPage } from './login.page';
 
@@ -10,8 +12,8 @@ const routes: Routes = [
     component: LoginPage
   },
   {
-    path: 'home',
-    component: HomePage
+    path: 'perfil',
+    component:PerfilPage
   }
 ];
 
