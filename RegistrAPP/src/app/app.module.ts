@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatIconModule} from '@angular/material/icon';
 
+import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,7 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
   IonicModule.forRoot(), 
   AppRoutingModule, 
   BrowserAnimationsModule,
-  MatIconModule
+  MatIconModule,
+  MatTableModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
