@@ -16,7 +16,8 @@ export class Usuario {
   nombreUsuario: string;
   password: string;
   curso:string;
-  correo:string
+  correo:string;
+  fechaNacimiento:string;
   
 
   constructor(id:number,
@@ -25,7 +26,8 @@ export class Usuario {
     nombreUsuario: string,
     password: string,
     curso:string,
-    correo:string) {
+    correo:string,
+    fechaNacimiento:string) {
     this.id=id;
     this.nombre = nombre;
     this.apellido = apellido;
@@ -33,6 +35,7 @@ export class Usuario {
     this.password=password;
     this.curso=curso;
     this.correo=correo;
+    this.fechaNacimiento=fechaNacimiento;
   }
 
   // public method
