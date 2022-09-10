@@ -1,14 +1,15 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>RegistrAPP</ion-title>
+
+    <ion-title center>RegistrAPP</ion-title>
   </ion-toolbar>
 </ion-header>
   
   <ion-content>
       <h3 style="text-align: center;">Perfil Alumno</h3>
+      <center><ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+      </ion-avatar></center>
       <ion-item>
         <ion-label position="stacked">Nombre:</ion-label>
         <ion-input placeholder="Ej: Juan"></ion-input>
@@ -25,11 +26,16 @@
         <ion-label position="stacked">Fecha de Nacimiento:</ion-label>
         <ion-input placeholder=""></ion-input>
       </ion-item>
-      <ion-button href="home" expand="block">Registrar Asistencia</ion-button>
       <br>
   </ion-content>
 
+
   <ion-footer>
-    <ion-icon name="alarm-outline"></ion-icon>
+    <ion-toolbar color="success">
+     <center>
+      <ion-button href="asistencia" color="warning"><mat-icon>calendar_month</mat-icon></ion-button>
+      <ion-button href="home" color="warning"><mat-icon>event</mat-icon></ion-button>
+    </center> 
+    </ion-toolbar>
   </ion-footer>
 
