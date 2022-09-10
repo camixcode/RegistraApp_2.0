@@ -50,7 +50,14 @@ export class HomePage {
   
 
   limpiar(){
-    this.usuario.nombre = ""
+    this.usuarioBD.nombre = "";
+    this.usuarioBD.nombreUsuario = "";
+    this.usuarioBD.apellido = "";
+    this.usuarioBD.correo = "";
+    this.usuarioBD.nivelEducacion = "";
+    this.usuarioBD.fechaNacimiento = "";
+    this.usuarioBD.curso= "";
+    this.usuarioBD.password= "";
 
   }
 
