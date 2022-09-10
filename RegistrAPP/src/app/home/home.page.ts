@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Usuario } from '../app.component';
+import { Usuarios } from '../app.component';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class HomePage {
     ) {}
     
     usuario = new Usuario(1,"","","","","","","");
+    usuarioBD= new Usuario(1,"","","","","","","");
 
 
     async presentAlert() {
@@ -46,7 +48,7 @@ export class HomePage {
   }
 
   async guardar(){
-    localStorage.setItem('usuario', JSON.stringify(this.usuario));
+    localStorage.setItem('usuarioBD', JSON.stringify(this.usuarioBD));
     const alert = await this.alertController.create({
       subHeader: 'Usuario',
       message: 'cuenta creada exitosamente',
