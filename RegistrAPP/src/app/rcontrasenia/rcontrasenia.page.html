@@ -14,14 +14,20 @@
          <ion-label position="stacked">Nombre de usuario : {{usuarioBD.nombreUsuario}}</ion-label>
        </ion-item>
        <ion-item>
-         <ion-label type="Password" position="stacked">Nueva Contraseña:</ion-label>
-         <ion-input type="Password" placeholder=""></ion-input>
+         <ion-label type="Password" position="stacked" >Nueva Contraseña:</ion-label>
+         <ion-input type="Password" placeholder="" [(ngModel)]="newPassword"></ion-input>
        </ion-item>
        <ion-item>
          <ion-label type="Password" position="stacked">Re-Ingrese Contraseña</ion-label>
-         <ion-input type="Password" placeholder=""></ion-input>
-         <ion-button color="warning" (click)="limpiar()">Limpiar</ion-button>
-         <ion-button href="login" color="success" (click)="guardar()">guardar</ion-button>
+         <ion-input type="Password" placeholder="" [(ngModel)]="confirmPassword"></ion-input>
+         
+          <ion-buttons>
+            <center>
+            <ion-button color="warning" (click)="limpiar()">Limpiar</ion-button>
+           <ion-button color="success" (click)="nuevaContrasena()">guardar</ion-button>
+          </center>
+           </ion-buttons>
+         
         </ion-item>
        
    </ion-content>
