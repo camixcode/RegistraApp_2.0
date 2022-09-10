@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/login"></ion-back-button>
     </ion-buttons>
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-content>
       <h1 style="text-align: center;">Crear cuenta</h1>
       <h3 style="text-align: center;">Todos los campos son obligatorios</h3>
 
@@ -39,8 +39,6 @@
         </ion-item>
       </ion-list>
 
-  
-
       <ion-item>
         <ion-label position="fixed" >Fecha nacimiento</ion-label>
         <ion-input type="date" id="fechaNacimiento" [(ngModel)]="usuarioBD.fechaNacimiento" ></ion-input>
@@ -52,9 +50,17 @@
       </ion-item>
       <br>
       <center>
-        <ion-button (click)="presentAlert()" color="success">Mostrar</ion-button>
       <ion-button color="warning" (click)="limpiar()">Limpiar</ion-button>
       <ion-button color="success" (click)="guardar()">guardar</ion-button>
-  
     </center>
+  </ion-content>
+  <ion-footer>
+
+
+    <ion-toolbar color="success">
+     <center>
+      <ion-button href="home" color="warning"><mat-icon>vpn_key</mat-icon></ion-button>
+    </center> 
+    </ion-toolbar>
+  </ion-footer>
 
