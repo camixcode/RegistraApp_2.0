@@ -25,9 +25,27 @@ export class LoginPage implements OnInit {
   async ingresar() {
 
     let usuarioBD = JSON.parse(localStorage.getItem('usuarioBD'));
-    console.log(usuarioBD);
- 
+    // let usuario = JSON.parse(localStorage.getItem('usuarioBD'));
     
+
+    if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario){
+      const alert = await this.alertController.create({
+        subHeader: 'Usuario',
+        message: 'usuario correcto',
+        buttons: ['OK'],
+      });
+  
+      await alert.present();
+    }else{
+      const alert = await this.alertController.create({
+        subHeader: 'Usuario',
+        message: 'Error',
+        buttons: ['OK'],
+      });
+  
+      await alert.present();
+    }
   }
+
 
 }
