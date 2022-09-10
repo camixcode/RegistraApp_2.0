@@ -17,7 +17,13 @@
       <ion-input id="password" type="Password" minlength="3" maxlength="8" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
     <ion-button (click)="ingresar()" expand="block" >Inicio Sesión </ion-button>
-    <ion-button href="Rcontrasenia" expand="block">Recuperar contraseña</ion-button>
-    <ion-button href="home" expand="block">Crear Cuenta</ion-button>  
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar color="success">
+   <center>
+    <ion-button href="rcontrasenia" color="warning"><mat-icon>sync_lock</mat-icon></ion-button>
+    <ion-button href="home" color="warning"><mat-icon>add_reaction</mat-icon></ion-button>
+  </center> 
+  </ion-toolbar>
+</ion-footer>
