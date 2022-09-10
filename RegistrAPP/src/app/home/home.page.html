@@ -11,7 +11,7 @@
       <h3 style="text-align: center;">Todos los campos son obligatorios</h3>
 
       <ion-item>
-        <ion-label position="fixed">Nombre Usuario</ion-label>
+        <ion-label position="fixed">Usuario</ion-label>
         <ion-input [(ngModel)]="usuarioBD.nombreUsuario" id="nombre"></ion-input>
       </ion-item>
       <ion-item>
@@ -30,10 +30,8 @@
       
       <ion-list>
         <ion-item>
-          <ion-select [(ngModel)]="usuarioBD.nivelEducacion" placeholder="Selccione nivel de estudio">
-            <ion-select-option value="Basico">Basico</ion-select-option>
-            <ion-select-option value="Media">Media</ion-select-option>
-            <ion-select-option value="Tecnico">Tecnico</ion-select-option>
+          <ion-select [(ngModel)]="usuarioBD.nivelEducacion" placeholder="Selccione Escuela">
+            <ion-select-option value="Tecnico">Técnico</ion-select-option>
             <ion-select-option value="Ingieneria">Ingieneria</ion-select-option>
           </ion-select>
         </ion-item>
@@ -45,7 +43,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="fixed" >Password</ion-label>
+        <ion-label position="fixed" >Contrseña</ion-label>
         <ion-input type="password" id="password" [(ngModel)]="usuarioBD.password"></ion-input>
       </ion-item>
       <br>
@@ -59,7 +57,7 @@
 
     <ion-toolbar color="success">
      <center>
-      <ion-button href="home" color="warning"><mat-icon>vpn_key</mat-icon></ion-button>
+      <ion-button href="login" color="warning"><mat-icon>vpn_key</mat-icon></ion-button>
     </center> 
     </ion-toolbar>
   </ion-footer>

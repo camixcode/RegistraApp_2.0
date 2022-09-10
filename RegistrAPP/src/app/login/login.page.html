@@ -9,20 +9,25 @@
 
     <h3 style="text-align: center;">LOGIN</h3>
 
-    <center><ion-avatar>
-      <img alt="Silhouette of a person's head" src="./assets/icon/201591.jpg" />
-    </ion-avatar></center>
+    <center>
+      <ion-thumbnail> 
+        <img alt="Silhouette of mountains" src="./assets/icon/201591.jpg" />
+    </ion-thumbnail>
+  </center>
     <br><br>
     <ion-item>
       <ion-label position="stacked">Nombre de usuario</ion-label>
       <ion-input id="nombreUsuario" placeholder="Nombre Usuario"[(ngModel)]="usuario.nombreUsuario"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label type="Password" position="floating">Password</ion-label>
+      <ion-label type="Password" position="floating">Contraseña</ion-label>
       <ion-input id="password" type="Password" minlength="3" maxlength="8" [(ngModel)]="usuario.password"></ion-input>
+      <br>
     </ion-item>
-    <ion-button (click)="ingresar()" expand="block" >Inicio Sesión </ion-button>
+    <ion-button (click)="ingresar()" expand="block" color="success" >Inicio Sesión </ion-button>
 </ion-content>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+
 
 <ion-footer>
   <ion-toolbar color="success">
