@@ -30,23 +30,15 @@ export class LoginPage implements OnInit {
     // let usuario = JSON.parse(localStorage.getItem('usuarioBD'));
     
 
-    if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password==usuarioBD.password && this.usuarioBD.tipoUsuario=="alumno"){
+    if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password==usuarioBD.password){
       const res = await this.loadingCtrl.create({
-        message: 'Validando datos alumno'
+        message: 'Validando datos'
       });
      res.present()
 
       setTimeout("location.href='/perfil'", 5000);
 
-    }else if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password==usuarioBD.password && this.usuarioBD.tipoUsuario=="profesor"){
-      const res = await this.loadingCtrl.create({
-        message: 'Validando datos profesor'
-      });
-     res.present()
-
-      setTimeout("location.href='/docente'", 5000);
-    }
-    else if (this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password != usuarioBD.password){
+    }else if (this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password != usuarioBD.password){
       const alert = await this.alertController.create({
         subHeader: 'Usuario',
         message: 'Error contraseña incorrecta',
