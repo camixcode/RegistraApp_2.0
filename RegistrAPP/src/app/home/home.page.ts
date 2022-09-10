@@ -61,3 +61,4 @@ export class HomePage {
     console.log(this.usuario.nombreUsuario)
   }
 }
+
