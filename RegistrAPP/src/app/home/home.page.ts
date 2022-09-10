@@ -19,8 +19,8 @@ export class HomePage {
     private loadingCtrl: LoadingController
     ) {}
     
-    usuario = new Usuario(1,"","","","","","","");
-    usuarioBD= new Usuario(1,"","","","","","","");
+    usuario = new Usuario(1,"","","","","","","","");
+    usuarioBD= new Usuario(1,"","","","","","","","");
 
 
     async presentAlert() {

@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     public loadingCtrl: LoadingController
   ) { }
-  usuario = new Usuario(1,"","","","","","","");
-  usuarioBD = new Usuario(1,"","","","","","","");
+  usuario = new Usuario(1,"","","","","","","","");
+  usuarioBD = new Usuario(1,"","","","","","","","");
 
 
 
@@ -30,15 +30,23 @@ export class LoginPage implements OnInit {
     // let usuario = JSON.parse(localStorage.getItem('usuarioBD'));
     
 
-    if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password==usuarioBD.password){
+    if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password==usuarioBD.password && this.usuarioBD.tipoUsuario=="alumno"){
       const res = await this.loadingCtrl.create({
-        message: 'Validando datos'
+        message: 'Validando datos alumno'
       });
      res.present()
 
       setTimeout("location.href='/perfil'", 5000);
 
-    }else if (this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password != usuarioBD.password){
+    }else if(this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password==usuarioBD.password && this.usuarioBD.tipoUsuario=="profesor"){
+      const res = await this.loadingCtrl.create({
+        message: 'Validando datos profesor'
+      });
+     res.present()
+
+      setTimeout("location.href='/docente'", 5000);
+    }
+    else if (this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password != usuarioBD.password){
       const alert = await this.alertController.create({
         subHeader: 'Usuario',
         message: 'Error contraseña incorrecta',

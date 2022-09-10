@@ -16,7 +16,7 @@ export class RContraseniaPage implements OnInit {
 
   ngOnInit() {
   }
-  usuario= new Usuario(1,"","","","","","","");
+  usuario= new Usuario(1,"","","","","","","","");
 
   usuarioBD = JSON.parse(localStorage.getItem('usuarioBD'));
   newPassword:string;

@@ -39,6 +39,16 @@
         <ion-input type="date" id="fechaNacimiento" [(ngModel)]="usuarioBD.fechaNacimiento" ></ion-input>
       </ion-item>
 
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="usuarioBD.tipoUsuario" placeholder="Selccione Escuela">
+            <ion-select-option value="alumno">alumno</ion-select-option>
+            <ion-select-option value="profesor">profesor</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
       <ion-item>
         <ion-label position="fixed" >Contrseña</ion-label>
         <ion-input type="password" id="password" [(ngModel)]="usuarioBD.password"></ion-input>

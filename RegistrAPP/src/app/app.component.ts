@@ -24,6 +24,7 @@ export class Usuario {
   correo:string;
   fechaNacimiento:string;
   nivelEducacion:string;
+  tipoUsuario:string
   private AlertController: AlertController
   
 
@@ -34,7 +35,8 @@ export class Usuario {
     password: string,
     correo:string,
     fechaNacimiento:string,
-    nivelEducacion:string
+    nivelEducacion:string,
+    tipoUsuario:string
     ) {
     this.id=id;
     this.nombre = nombre;
@@ -44,6 +46,7 @@ export class Usuario {
     this.correo=correo;
     this.fechaNacimiento=fechaNacimiento;
     this.nivelEducacion=nivelEducacion;
+    this.tipoUsuario= tipoUsuario;
 
     
   }
