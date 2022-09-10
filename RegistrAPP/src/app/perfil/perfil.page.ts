@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Usuario } from '../app.component';
 
 @Component({
   selector: 'app-perfil',
@@ -13,6 +14,7 @@ export class PerfilPage implements OnInit {
     private alertController: AlertController,
     private activatedRoute: ActivatedRoute
     ) {}
+    usuarioBD= new Usuario(1,"","","","","","","");
 
   ngOnInit() {
   }

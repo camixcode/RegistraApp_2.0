@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
       });
   
       await alert.present();
+      window.location.href = '/perfil';
     }else{
       const alert = await this.alertController.create({
         subHeader: 'Usuario',
