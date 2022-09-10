@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'rcontrasenia',
     loadChildren: () => import('./rcontrasenia/rcontrasenia.module').then( m => m.RContraseniaPageModule)
   },
+  {
+    path: 'qr',
+    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+  },
 
 ];
 
