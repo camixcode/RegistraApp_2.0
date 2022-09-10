@@ -9,6 +9,10 @@ export class AppComponent {
   constructor() {}
   
 }
+export class Usuarios{
+  usuarios = []
+}
+
 export class Usuario {
   id:number;
   nombre: string;

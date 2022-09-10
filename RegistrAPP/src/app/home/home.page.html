@@ -8,37 +8,45 @@
 
       <h1 style="text-align: center;">Crear cuenta</h1>
       <br>
-      <ion-label position="fixed" style="margin-left: 10px;">Usuario : {{usuario.nombreUsuario}}</ion-label>
-      <br>
       <h3 style="text-align: center;">Informacion Adicional</h3>
+
+      <ion-item>
+        <ion-label position="fixed">Nombre Usuario</ion-label>
+        <ion-input [(ngModel)]="usuarioBD.nombreUsuario" id="nombre"></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label position="fixed">Nombre</ion-label>
-        <ion-input [(ngModel)]="usuario.nombre" id="nombre"></ion-input>
+        <ion-input [(ngModel)]="usuarioBD.nombre" id="nombre"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="fixed">Apellido</ion-label>
-        <ion-input [(ngModel)]="usuario.apellido" id="apellido"></ion-input>
+        <ion-input [(ngModel)]="usuarioBD.apellido" id="apellido"></ion-input>
       </ion-item>
       <ion-list>
         <ion-item>
-          <ion-select [(ngModel)]="usuario.nivelEducacion" placeholder="Selccione nivel de estudio">
-            <ion-select-option value="apples">Basico</ion-select-option>
-            <ion-select-option value="bananas">Media</ion-select-option>
-            <ion-select-option value="bananas">Tecnico</ion-select-option>
-            <ion-select-option value="bananas">Ingieneria</ion-select-option>
+          <ion-select [(ngModel)]="usuarioBD.nivelEducacion" placeholder="Selccione nivel de estudio">
+            <ion-select-option value="Basico">Basico</ion-select-option>
+            <ion-select-option value="Media">Media</ion-select-option>
+            <ion-select-option value="Tecnico">Tecnico</ion-select-option>
+            <ion-select-option value="Ingieneria">Ingieneria</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
 
       <ion-item>
         <ion-label position="fixed" >Fecha nacimiento</ion-label>
-        <ion-input type="date" id="fechaNacimiento" ></ion-input>
+        <ion-input type="date" id="fechaNacimiento" [(ngModel)]="usuarioBD.fechaNacimiento" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed" >Password</ion-label>
+        <ion-input type="password" id="password" [(ngModel)]="usuarioBD.password"></ion-input>
       </ion-item>
       <br>
       <center>
         <ion-button (click)="presentAlert()" color="success">Mostrar</ion-button>
       <ion-button color="warning" (click)="limpiar()">Limpiar</ion-button>
-      <ion-button color="success" (click)="guardar()">guardar</ion-button>
+      <ion-button href="login" color="success" (click)="guardar()">guardar</ion-button>
   
     </center>
 
