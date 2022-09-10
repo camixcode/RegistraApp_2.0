@@ -20,3 +20,4 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [RContraseniaPage]
 })
 export class RContraseniaPageModule {}
+

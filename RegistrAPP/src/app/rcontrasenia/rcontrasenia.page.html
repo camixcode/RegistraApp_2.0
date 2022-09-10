@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="success">
+    <h1 style="text-align: center;">RegistrAPP</h1>
   </ion-toolbar>
 </ion-header>
+   
+   <ion-content>
+     <br>
+       <h3 style="text-align: center;">Recuperar Contraseña</h3>
+       <center><ion-avatar>
+         <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+       </ion-avatar></center>
+       <ion-item>
+         <ion-label position="stacked">Nombre de usuario:</ion-label>
+         <ion-input placeholder="alumno"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label type="Password" position="stacked">Nueva Contraseña:</ion-label>
+         <ion-input type="Password" placeholder=""></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label type="Password" position="stacked">Re-Ingrese Contraseña</ion-label>
+         <ion-input type="Password" placeholder=""></ion-input>
+         <ion-button color="warning" (click)="limpiar()">Limpiar</ion-button>
+         <ion-button href="login" color="success" (click)="guardar()">guardar</ion-button>
+     
+        </ion-item>
+       
+   </ion-content>
+  
+   
+ 
+   <ion-footer>
+     <ion-toolbar color="success">
+      <center>
+       <ion-button href="asistencia" color="warning"><mat-icon>calendar_month</mat-icon></ion-button>
+       <ion-button href="home" color="warning"><mat-icon>event</mat-icon></ion-button>
+     </center> 
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">holiscontrasenia</a></p>
-  </div>
-</ion-content>
+     </ion-toolbar>
+   </ion-footer>
+ 
+ 
