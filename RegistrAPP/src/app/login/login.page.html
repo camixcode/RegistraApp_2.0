@@ -10,13 +10,13 @@
 
     <ion-item>
       <ion-label position="stacked">Nombre de usuario</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-input placeholder="Nombre Usuario"[(ngModel)]="usuario.nombreUsuario"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label type="Password" position="floating">Password</ion-label>
-      <ion-input id="password" type="Password" minlength="3" maxlength="8"></ion-input>
+      <ion-input id="password" type="Password" minlength="3" maxlength="8" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
-    <ion-button href="perfil" expand="block">Inicio Sesión</ion-button>
+    <ion-button href="perfil" expand="block" (click)="ingresar()">Inicio Sesión </ion-button>
     <ion-button href="Rcontrasenia" expand="block">Recuperar contraseña</ion-button>
     <ion-button href="home" expand="block">Crear Cuenta</ion-button>
     
