@@ -18,4 +18,8 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
   }
 
+  volver(){
+    window.location.href='/home'
+  }
+
 }
