@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { QrPageRoutingModule } from './qr-routing.module';
+import { DocentePageRoutingModule } from './docente-routing.module';
 
-import { QrPage } from './qr.page';
-
+import { DocentePage } from './docente.page';
 import {MatIconModule} from '@angular/material/icon';
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    QrPageRoutingModule,
+    DocentePageRoutingModule,
     MatIconModule
   ],
-  declarations: [QrPage]
+  declarations: [DocentePage]
 })
-export class QrPageModule {}
+export class DocentePageModule {}
