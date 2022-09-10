@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class Usuario {
   curso:string;
   correo:string;
   fechaNacimiento:string;
+  private AlertController: AlertController
   
 
   constructor(id:number,
@@ -36,6 +38,7 @@ export class Usuario {
     this.curso=curso;
     this.correo=correo;
     this.fechaNacimiento=fechaNacimiento;
+    
   }
 
   // public method
