@@ -13,6 +13,8 @@ export class RContraseniaPage implements OnInit {
   ngOnInit() {
   }
 
+  usuarioBD = JSON.parse(localStorage.getItem('usuarioBD'));
+
   
 }
 
