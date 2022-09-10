@@ -32,7 +32,6 @@ export class Usuario {
     apellido: string,  
     nombreUsuario: string,
     password: string,
-    curso:string,
     correo:string,
     fechaNacimiento:string,
     nivelEducacion:string
@@ -49,7 +48,7 @@ export class Usuario {
     
   }
 
-  public setPassword(password: string) {
+  public set Password(password: string) {
     this.password = password;
   }
 

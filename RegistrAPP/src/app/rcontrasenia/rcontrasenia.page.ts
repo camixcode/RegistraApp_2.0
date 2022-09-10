@@ -16,7 +16,7 @@ export class RContraseniaPage implements OnInit {
 
   ngOnInit() {
   }
-  usuario= new Usuario(1,"","","","","","","","");
+  usuario= new Usuario(1,"","","","","","","");
 
   usuarioBD = JSON.parse(localStorage.getItem('usuarioBD'));
   newPassword:string;
@@ -25,7 +25,7 @@ export class RContraseniaPage implements OnInit {
   async nuevaContrasena(){
     if((this.newPassword.length >0 || this.confirmPassword.length>0)&&(this.newPassword == this.confirmPassword)){
       this.usuario = this.usuarioBD;
-      this.usuario.setPassword(this.newPassword);
+      this.usuario.password=this.newPassword;
       localStorage.setItem('usuarioBD', JSON.stringify(this.usuario));
 
       const res = await this.loadingCtrl.create({

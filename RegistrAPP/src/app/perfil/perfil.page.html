@@ -14,20 +14,25 @@
       </ion-avatar>
     </center>
       <ion-item>
-        <ion-label position="stacked">Nombre:</ion-label>
-        <ion-input placeholder="Ej: Juan"></ion-input>
+        <ion-label position="stacked">Nombre usuario : {{usuarioBD.nombreUsuario}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Apellido:</ion-label>
-        <ion-input placeholder="Ej:Perez"></ion-input>
+        <ion-label position="stacked">Nombre : {{usuarioBD.nombre}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Escuela:</ion-label>
-        <ion-input placeholder="Ej: DuocUc"></ion-input>
+        <ion-label position="stacked">Apellido : {{usuarioBD.apellido}}</ion-label>
       </ion-item>
+
       <ion-item>
-        <ion-label position="stacked">Fecha de Nacimiento:</ion-label>
-        <ion-input placeholder=""></ion-input>
+        <ion-label position="stacked">Fecha de Nacimiento : {{usuarioBD.fechaNacimiento}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Nivel educacion : {{usuarioBD.nivelEducacion}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo : {{usuarioBD.correo}}</ion-label>
       </ion-item>
       <br>
   </ion-content>

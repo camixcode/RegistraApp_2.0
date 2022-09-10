@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     public loadingCtrl: LoadingController
   ) { }
-  usuario = new Usuario(1,"","","","","","","","");
-  usuarioBD = new Usuario(1,"","","","","","","","");
+  usuario = new Usuario(1,"","","","","","","");
+  usuarioBD = new Usuario(1,"","","","","","","");
 
 
 
