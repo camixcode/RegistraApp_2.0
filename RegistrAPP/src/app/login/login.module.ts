@@ -9,13 +9,16 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import {MatIconModule} from '@angular/material/icon';
 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule
   ],
   declarations: [LoginPage]
 })

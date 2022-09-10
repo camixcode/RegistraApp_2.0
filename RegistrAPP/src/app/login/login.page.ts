@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { Usuario } from '../app.component';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
