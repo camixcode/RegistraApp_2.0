@@ -5,21 +5,25 @@
 </ion-header>
 
 <ion-content>
-
+  <br>
     <h3 style="text-align: center;">LOGIN</h3>
-
     <ion-item>
       <ion-label position="stacked">Nombre de usuario</ion-label>
       <ion-input placeholder="Nombre Usuario"[(ngModel)]="usuario.nombreUsuario"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label type="Password" position="floating">Password</ion-label>
+      <ion-label type="Password" position="floating">Contraseña</ion-label>
       <ion-input id="password" type="Password" minlength="3" maxlength="8" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
+    <br><br><br>
     <ion-button href="perfil" expand="block" (click)="ingresar()">Inicio Sesión </ion-button>
-    <ion-button href="Rcontrasenia" expand="block">Recuperar contraseña</ion-button>
-    <ion-button href="home" expand="block">Crear Cuenta</ion-button>
-    
 </ion-content>
 
-  
+<ion-footer>
+  <ion-toolbar color="success">
+   <center>
+    <ion-button href="asistencia" color="warning"><mat-icon>sync_lock</mat-icon></ion-button>
+    <ion-button href="home" color="warning"><mat-icon>person_add</mat-icon></ion-button>
+  </center> 
+  </ion-toolbar>
+</ion-footer>
