@@ -1,9 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>asistencia</ion-title>
-  </ion-toolbar>
-</ion-header>
+  <center><ion-toolbar color="success">
+     <ion-title center>RegistrAPP</ion-title>
+     <ion-buttons slot="start"> <ion-back-button></ion-back-button></ion-buttons>
+   </ion-toolbar></center> 
+ </ion-header>
+   
+   <ion-content>
+     <br>
+       <h3 style="text-align: center;">Perfil Alumno</h3>
+       <center><ion-avatar>
+         <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+       </ion-avatar></center>
+       <ion-item>
+         <ion-label position="stacked">Nombre:</ion-label>
+         <ion-input placeholder="Ej: Juan"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label position="stacked">Apellido:</ion-label>
+         <ion-input placeholder="Ej:Perez"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label position="stacked">Escuela:</ion-label>
+         <ion-input placeholder="Ej: DuocUc"></ion-input>
+       </ion-item>
+       <ion-item>
+         <ion-label position="stacked">Fecha de Nacimiento:</ion-label>
+         <ion-input placeholder=""></ion-input>
+       </ion-item>
+       <br>
+   </ion-content>
 
-<ion-content>
-
-</ion-content>
+   <ion-footer>
+     <ion-toolbar color="success">
+      <center>
+       <ion-button href="asistencia" color="warning"><mat-icon>calendar_month</mat-icon></ion-button>
+       <ion-button href="home" color="warning"><mat-icon>event</mat-icon></ion-button>
+     </center> 
+     </ion-toolbar>
+   </ion-footer>
