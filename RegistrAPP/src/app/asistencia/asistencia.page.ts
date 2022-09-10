@@ -7,16 +7,15 @@ export interface PeriodicElement {
   PorcAsistencia: string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {Dia: 1, Curso: 'Hydrogen', PorcAsistencia: 'H'},
-  {Dia: 2, Curso: 'Helium', PorcAsistencia: 'He'},
-  {Dia: 3, Curso: 'Lithium', PorcAsistencia: 'Li'},
-  {Dia: 4, Curso: 'Beryllium', PorcAsistencia: 'Be'},
-  {Dia: 5, Curso: 'Boron', PorcAsistencia: 'B'},
-  {Dia: 6, Curso: 'Carbon', PorcAsistencia: 'C'},
-  {Dia: 7, Curso: 'Nitrogen', PorcAsistencia: 'N'},
-  {Dia: 8, Curso: 'Oxygen', PorcAsistencia: 'O'},
-  {Dia: 9, Curso: 'Fluorine', PorcAsistencia: 'F'},
-  {Dia: 10, Curso: 'Neon', PorcAsistencia: 'Ne'},
+  {Dia: 1, Curso: 'Ingles', PorcAsistencia: '90'},
+  {Dia: 2, Curso: 'Mobil', PorcAsistencia: '90'},
+  {Dia: 3, Curso: 'Ética', PorcAsistencia: '90'},
+  {Dia: 4, Curso: 'Software', PorcAsistencia: '90'},
+  {Dia: 5, Curso: 'Calidad', PorcAsistencia: '90'},
+  {Dia: 6, Curso: 'Portafolio', PorcAsistencia: '90'},
+  {Dia: 7, Curso: 'Estadistica', PorcAsistencia: '90'},
+  {Dia: 8, Curso: 'Fe Cristiana', PorcAsistencia: '90'},
+
 ];
 @Component({
   selector: 'app-asistencia',
