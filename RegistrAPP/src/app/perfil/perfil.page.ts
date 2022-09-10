@@ -14,8 +14,7 @@ export class PerfilPage implements OnInit {
     private alertController: AlertController,
     private activatedRoute: ActivatedRoute
     ) {}
-    usuarioBD= new Usuario(1,"","","","","","","");
-
+   usuarioBD = JSON.parse(localStorage.getItem('usuarioBD'));
   ngOnInit() {
   }
 
