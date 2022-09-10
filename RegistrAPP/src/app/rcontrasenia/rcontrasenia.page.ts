@@ -24,14 +24,16 @@ export class RContraseniaPage implements OnInit {
 
   async nuevaContrasena(){
     if((this.newPassword.length >0 || this.confirmPassword.length>0)&&(this.newPassword == this.confirmPassword)){
-      this.usuario
+      this.usuario = this.usuarioBD;
+      this.usuario.setPassword(this.newPassword);
+      localStorage.setItem('usuarioBD', JSON.stringify(this.usuario));
+
       const res = await this.loadingCtrl.create({
         message: 'Actualizando contraseña'
       });
      res.present()
 
       setTimeout("location.href='/login'", 3000);
-      localStorage.setItem('usuarioBD.password', JSON.stringify(this.newPassword));
       
       
 

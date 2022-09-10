@@ -49,6 +49,10 @@ export class Usuario {
     
   }
 
+  public setPassword(password: string) {
+    this.password = password;
+  }
+
   // public method
   printUserInfo() {
     console.log(`name: ${this.nombre}, apellido: ${this.apellido}`);

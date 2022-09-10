@@ -76,7 +76,7 @@ export class HomePage {
       });
      res.present()
 
-      setTimeout("location.href='/perfil'", 3000);
+      setTimeout("location.href='/login'", 3000);
       localStorage.setItem('usuarioBD', JSON.stringify(this.usuarioBD));
     
     }
