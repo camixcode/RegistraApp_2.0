@@ -37,6 +37,10 @@ export class LoginPage implements OnInit {
      res.present()
 
       setTimeout("location.href='/perfil'", 5000);
+      localStorage.setItem('ingresado','true')
+      let secionIniciada = JSON.parse(localStorage.getItem('ingresado'));
+      console.log(secionIniciada)
+
 
     }else if (this.usuario.nombreUsuario==usuarioBD.nombreUsuario && this.usuario.password != usuarioBD.password){
       const alert = await this.alertController.create({
