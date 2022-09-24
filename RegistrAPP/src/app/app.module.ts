@@ -12,6 +12,8 @@ import {MatIconModule} from '@angular/material/icon';
 
 import {MatTableModule} from '@angular/material/table';
 
+import { SQLite } from '@ionic-native/sqlite/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -22,7 +24,7 @@ import {MatTableModule} from '@angular/material/table';
   MatIconModule,
   MatTableModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },SQLite],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
