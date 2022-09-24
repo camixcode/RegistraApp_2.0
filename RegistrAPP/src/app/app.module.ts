@@ -8,23 +8,29 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 
 import { SQLite } from '@ionic-native/sqlite/ngx';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-  BrowserModule, 
-  IonicModule.forRoot(), 
-  AppRoutingModule, 
-  BrowserAnimationsModule,
-  MatIconModule,
-  MatTableModule
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatTableModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },SQLite],
+  providers: [
+    SQLite,
+    SQLitePorter,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+
   bootstrap: [AppComponent],
-})
-export class AppModule {}
+    })
+export class AppModule { }
