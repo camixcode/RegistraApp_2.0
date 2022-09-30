@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { AlertController,LoadingController } from '@ionic/angular';
 import { Usuario } from '../app.component';
 import { Usuarios } from '../app.component';
+import { Bd} from '../services/bd'
+import { HttpClient} from '@angular/common/http';
+
 
 
 
@@ -16,7 +19,8 @@ export class HomePage {
   constructor(
     private alertController: AlertController,
     private activatedRoute: ActivatedRoute,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private dataBase: Bd
     ) {}
     
     usuario = new Usuario(1,"","","","","","","","");
@@ -64,8 +68,8 @@ export class HomePage {
   async guardar(){
 
     if(this.usuarioBD.nombre.length<=0 ||
-      this.usuarioBD.nombreUsuario.length<=0 ||
       this.usuarioBD.apellido.length<=0 ||
+      this.usuarioBD.nombreUsuario.length<=0 ||
       this.usuarioBD.nivelEducacion.length <=0 ||
       this.usuarioBD.fechaNacimiento.length<=0 ||
       this.usuarioBD.correo.length<=0){
@@ -85,15 +89,24 @@ export class HomePage {
 
       setTimeout("location.href='/login'", 3000);
       localStorage.setItem('usuarioBD', JSON.stringify(this.usuarioBD));
-    
+      this.dataBase.addUsuario(this.usuarioBD.nombreUsuario,
+        this.usuarioBD.nombre,
+        this.usuarioBD.apellido,
+        this.usuarioBD.correo,
+        this.usuarioBD.nivelEducacion,
+        this.usuarioBD.fechaNacimiento,
+        this.usuarioBD.tipoUsuario,
+        this.usuarioBD.password
+        )
     }
 
     
   }
 
   ngOnInit() {
-    this.usuario.nombreUsuario=this.activatedRoute.snapshot.paramMap.get("nombreUsuario");
-    console.log(this.usuario.nombreUsuario)
+    // this.usuario.nombreUsuario=this.activatedRoute.snapshot.paramMap.get("nombreUsuario");
+    console.log('iniciando componente',this.usuario.nombreUsuario)
+    console.log(this.dataBase.dbState());
   }
 }
 

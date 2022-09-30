@@ -21,7 +21,7 @@ export class Bd {
   ) {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'positronx_db.db',
+        name: 'db_registrapp.db',
         location: 'default'
       })
       .then((db: SQLiteObject) => {
@@ -31,7 +31,7 @@ export class Bd {
     });
   }
   dbState() {
-    return this.isDbReady.asObservable();
+    return this.isDbReady.value;
   }
  
   fetchSongs(): Observable<Usuario[]> {
@@ -51,6 +51,7 @@ export class Bd {
           .catch(error => console.error(error));
       });
     }
+
   // Obtener lista de los usuarios
   getUsuarios(){
     return this.storage.executeSql('SELECT * FROM usuario', []).then(res => {
@@ -59,11 +60,10 @@ export class Bd {
         for (var i = 0; i < res.rows.length; i++) { 
           items.push({ 
             id: res.rows.item(i).id,
+            nombreUsuario: res.rows.item(i).nombreUsuario,
             nombre: res.rows.item(i).nombre,  
             apellido: res.rows.item(i).apellido,
-            nombreUsuario: res.rows.item(i).nombreUsuario,
             password: res.rows.item(i).password,
-            curso: res.rows.item(i).curso,
             correo: res.rows.item(i).correo,
             fechaNacimiento: res.rows.item(i).fechaNacimiento,
             nivelEducacion: res.rows.item(i).nivelEducacion,
@@ -75,11 +75,12 @@ export class Bd {
     });
   }
   // Add
-  addSong(artist_name, song_name) {
-    let data = [artist_name, song_name];
-    return this.storage.executeSql('INSERT INTO usuario (artist_name, song_name) VALUES (?, ?)', data)
+  addUsuario(nombreUsuario, nombre, apellido, correo, nivelEducacion, fechaNacimiento, tipoUsuario , password ) {
+    let data = [nombreUsuario, nombre, apellido, correo, nivelEducacion, fechaNacimiento, tipoUsuario , password ];
+    return this.storage.executeSql('INSERT INTO usuario (nombreUsuario, nombre, apellido, correo, nivelEducacion, fechaNacimiento, tipoUsuario , password) VALUES (?,?,?,?,?,?,?,?)', data)
     .then(res => {
       this.getUsuarios;
+      console.log(data)
     });
   }
  
@@ -88,11 +89,10 @@ export class Bd {
     return this.storage.executeSql('SELECT * FROM usuario WHERE id = ?', [id]).then(res => { 
       return {
             id: res.rows.item(0).id,
+            nombreUsuario: res.rows.item(0).nombreUsuario,
             nombre: res.rows.item(0).nombre,  
             apellido: res.rows.item(0).apellido,
-            nombreUsuario: res.rows.item(0).nombreUsuario,
             password: res.rows.item(0).password,
-            curso: res.rows.item(0).curso,
             correo: res.rows.item(0).correo,
             fechaNacimiento: res.rows.item(0).fechaNacimiento,
             nivelEducacion: res.rows.item(0).nivelEducacion,
@@ -102,7 +102,7 @@ export class Bd {
   }
   // Update
   updateSong(id, usuario: Usuario) {
-    let data = [usuario.id, usuario.nombre,usuario.apellido,usuario.nombreUsuario,usuario.password, usuario.curso,usuario.correo,usuario.fechaNacimiento,usuario.nivelEducacion,usuario.tipoUsuario];
+    let data = [usuario.id, usuario.nombreUsuario, usuario.nombre, usuario.apellido,usuario.correo,usuario.fechaNacimiento,usuario.nivelEducacion,usuario.tipoUsuario, usuario.password];
     return this.storage.executeSql(`UPDATE usuario SET nombre = ?, apellido = ? WHERE id = ${id}`, data)
     .then(data => {
       this.getUsuarios();

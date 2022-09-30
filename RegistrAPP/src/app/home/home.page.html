@@ -8,8 +8,8 @@
       <h4 style="text-align: center;">Todos los campos son obligatorios</h4>
 
       <ion-item>
-        <ion-label position="fixed">Usuario</ion-label>
-        <ion-input [(ngModel)]="usuarioBD.nombreUsuario" id="nombre"></ion-input>
+        <ion-label position="fixed">Nombre Usuario</ion-label>
+        <ion-input [(ngModel)]="usuarioBD.nombreUsuario" id="nombreUsuario"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="fixed">Nombre</ion-label>
@@ -41,7 +41,7 @@
 
       <ion-list>
         <ion-item>
-          <ion-select [(ngModel)]="usuarioBD.tipoUsuario" placeholder="Selccione Escuela">
+          <ion-select [(ngModel)]="usuarioBD.tipoUsuario" placeholder="Tipo de Usuario">
             <ion-select-option value="alumno">alumno</ion-select-option>
             <ion-select-option value="profesor">profesor</ion-select-option>
           </ion-select>
