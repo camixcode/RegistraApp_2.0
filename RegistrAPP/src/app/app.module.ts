@@ -7,12 +7,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { MatIconModule } from '@angular/material/icon';
 
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http'; 
-import { SQLite } from '@ionic-native/sqlite/ngx';
+import {SQLite} from '@awesome-cordova-plugins/sqlite/ngx'
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 
 
