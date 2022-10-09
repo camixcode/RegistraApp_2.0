@@ -21,25 +21,23 @@ export class Bd {
     private httpClient: HttpClient,
     private sqlPorter: SQLitePorter,
   ) { }
-  private open() {
+  
+   open() {
     return new Promise((resolve, reject) => {
-      this.platform.ready().then(() => {
-        if (this.isDbReady) {
-          resolve(this.isDbReady);
-        } else {
-          this.sqlite.create({
-            name: 'data.db',
-            location: 'default'
-          })
-          
-            .then((db: SQLiteObject) => {
-              this.db = db;
-              this.isDbReady = true;
-
-            }).catch(e => console.log(e));
-        }
-
-      }).catch(e => console.log(e));
+      this.sqlite.create({
+        name: 'data.db',
+        location: 'default'
+      })
+        .then((db: SQLiteObject) => {
+      
+      
+          db.executeSql('create table danceMoves(name VARCHAR(32))', [])
+            .then(() => console.log('Executed SQL'))
+            .catch(e => console.log(e));
+      
+      
+        })
+        .catch(e => console.log(e));
 
     }).catch(e => console.log(e));
   }

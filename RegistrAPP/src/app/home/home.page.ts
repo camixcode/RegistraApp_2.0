@@ -23,7 +23,8 @@ usuarios = Array<Usuario>()
     private alertController: AlertController,
     private activatedRoute: ActivatedRoute,
     private loadingCtrl: LoadingController,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    bd : Bd
   ) { }
 
   usuario = new Usuario();
@@ -119,6 +120,9 @@ usuarios = Array<Usuario>()
     }).catch((e)=> console.log(e))
   }
 
+  open(){
+  
+  }
 
   ngOnInit() {
     // this.usuario.nombreUsuario=this.activatedRoute.snapshot.paramMap.get("nombreUsuario");

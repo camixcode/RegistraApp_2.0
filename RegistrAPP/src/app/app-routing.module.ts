@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoGuard } from './ingresado.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
 
 const routes: Routes = [
   {
@@ -13,32 +15,41 @@ const routes: Routes = [
   },
   { 
     path: 'asistencia',
-    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'rcontrasenia',
-    loadChildren: () => import('./rcontrasenia/rcontrasenia.module').then( m => m.RContraseniaPageModule)
+    loadChildren: () => import('./rcontrasenia/rcontrasenia.module').then( m => m.RContraseniaPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'qr',
-    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'docente',
-    loadChildren: () => import('./docente/docente.module').then( m => m.DocentePageModule)
+    loadChildren: () => import('./docente/docente.module').then( m => m.DocentePageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'generar-qr',
-    loadChildren: () => import('./generar-qr/generar-qr.module').then( m => m.GenerarQRPageModule)
+    loadChildren: () => import('./generar-qr/generar-qr.module').then( m => m.GenerarQRPageModule),
+    canActivate: [IngresadoGuard]
   },
+  
+
 
 ];
 

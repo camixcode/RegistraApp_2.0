@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { Usuario } from '../app.component';
 
 @Component({
@@ -12,7 +12,9 @@ export class PerfilPage implements OnInit {
 
   constructor(
     private alertController: AlertController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public loadingCtrl: LoadingController
+
     ) {}
    usuarioBD = JSON.parse(localStorage.getItem('usuarioBD'));
   ngOnInit() {
@@ -21,5 +23,14 @@ export class PerfilPage implements OnInit {
   volver(){
     window.location.href='/home'
   }
-
+  async salir(){
+    const res = await this.loadingCtrl.create({
+      message: 'Cerrando sesion'
+    });
+   res.present()
+      setTimeout("location.href='/login'", 3000);
+      localStorage.removeItem('ingresado');
+      let secionIniciada = JSON.parse(localStorage.getItem('ingresado'));
+      console.log(secionIniciada)
+  }
 }
