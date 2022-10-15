@@ -17,6 +17,7 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class HomePage {
 
+  
 usuarios = Array<Usuario>()
 
   constructor(
