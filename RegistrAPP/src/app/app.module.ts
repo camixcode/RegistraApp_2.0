@@ -13,6 +13,8 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http'; 
 import {SQLite} from '@awesome-cordova-plugins/sqlite/ngx'
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
     BrowserAnimationsModule,
     MatIconModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     SQLite,
