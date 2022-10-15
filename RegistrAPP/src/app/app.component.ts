@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,10 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    public loadingCtrl: LoadingController
+
+  ) {}
   
 }
 export class Usuarios{
@@ -59,4 +63,6 @@ export class Usuario {
   printUserInfo() {
     console.log(`name: ${this.nombre}, apellido: ${this.apellido}`);
   }
+
+  
 }

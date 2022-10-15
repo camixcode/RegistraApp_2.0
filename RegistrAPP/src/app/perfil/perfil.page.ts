@@ -23,6 +23,7 @@ export class PerfilPage implements OnInit {
   volver(){
     window.location.href='/home'
   }
+
   async salir(){
     const res = await this.loadingCtrl.create({
       message: 'Cerrando sesion'
@@ -33,4 +34,6 @@ export class PerfilPage implements OnInit {
       let secionIniciada = JSON.parse(localStorage.getItem('ingresado'));
       console.log(secionIniciada)
   }
+
+  
 }

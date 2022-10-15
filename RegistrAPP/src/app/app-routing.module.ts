@@ -47,7 +47,11 @@ const routes: Routes = [
     path: 'generar-qr',
     loadChildren: () => import('./generar-qr/generar-qr.module').then( m => m.GenerarQRPageModule),
     canActivate: [IngresadoGuard]
+  },  {
+    path: 'cursos',
+    loadChildren: () => import('./cursos/cursos.module').then( m => m.CursosPageModule)
   },
+
   
 
 

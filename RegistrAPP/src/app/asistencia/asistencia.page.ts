@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 export interface PeriodicElement {
@@ -34,8 +35,22 @@ export class AsistenciaPage implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor() { }
+  constructor(
+    public loadingCtrl: LoadingController
 
+  ) { }
+
+  async salir(){
+    const res = await this.loadingCtrl.create({
+      message: 'Cerrando sesion'
+    });
+   res.present()
+      setTimeout("location.href='/login'", 3000);
+      localStorage.removeItem('ingresado');
+      let secionIniciada = JSON.parse(localStorage.getItem('ingresado'));
+      console.log(secionIniciada)
+  }
+  
   ngOnInit() {
   }
 

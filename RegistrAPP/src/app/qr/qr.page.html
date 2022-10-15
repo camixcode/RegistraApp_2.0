@@ -19,15 +19,15 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-menu-toggle>
-    <ion-item href="perfil">
+    <ion-item [routerLink]="['/perfil']">
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>Perfil</ion-label>
     </ion-item>
-    <ion-item href="asistencia">
+    <ion-item [routerLink]="['/asistencia']">
       <ion-icon name="calendar"  slot="start"></ion-icon>
       <ion-label>Asistencia</ion-label>
     </ion-item>
-    <ion-item href="qr">
+    <ion-item [routerLink]="['/qr']">
       <ion-icon name="qr-scanner" slot="start"></ion-icon>
      <ion-label>leer qr</ion-label>
     </ion-item>
@@ -65,12 +65,23 @@
     <ion-button (click)="ingresar()" expand="block" color="success" >LEER QR </ion-button>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar color="success">
-    <center>
-      <ion-button href="perfil" color="warning"><mat-icon>sentiment_very_satisfied</mat-icon></ion-button>
-      <ion-button href="asistencia" color="warning"><mat-icon>calendar_month</mat-icon></ion-button>
-      <ion-button href="login" color="warning"><mat-icon>exit_to_app</mat-icon></ion-button>
-    </center> 
-  </ion-toolbar>
-</ion-footer>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="schedule" [routerLink]="['/perfil']">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Perfil</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="calendar" [routerLink]="['/asistencia']">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Asistencia</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="log-out" (click)="salir()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>Salir</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
